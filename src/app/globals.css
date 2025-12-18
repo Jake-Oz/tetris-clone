@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0c0c0f;
+  --foreground: #f5f5f5;
+  --panel: #101624;
+  --grid-line: #161b2b;
+  --glow: #1b6cf0;
+  --nintendo-red: #e60012;
+  --nintendo-blue: #0f4ba6;
+  --nintendo-cyan: #00c8f8;
+  --nintendo-yellow: #ffd500;
+  --nintendo-green: #2ab200;
+  --nintendo-magenta: #e4007f;
+  --nintendo-orange: #d85f00;
+  --nintendo-ivory: #f8f4e3;
 }
 
 @theme inline {
@@ -12,15 +23,32 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  min-height: 100vh;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(27, 108, 240, 0.1),
+      transparent 26%
+    ),
+    radial-gradient(circle at 80% 10%, rgba(230, 0, 18, 0.09), transparent 24%),
+    linear-gradient(135deg, #0d1020 0%, #080a12 60%);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.glass-panel {
+  background: linear-gradient(
+    145deg,
+    rgba(16, 22, 36, 0.85),
+    rgba(19, 25, 42, 0.75)
+  );
+  border: 1px solid rgba(248, 244, 227, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(248, 244, 227, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.pixel-border {
+  box-shadow: 0 0 0 2px rgba(248, 244, 227, 0.12),
+    0 0 0 4px rgba(0, 200, 248, 0.14), 0 0 18px rgba(0, 200, 248, 0.15);
 }
